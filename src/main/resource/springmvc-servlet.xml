@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        
+      <!-- 1.配置基于注解的扫描器 -->
+      <context:component-scan base-package="com.pro.controller"></context:component-scan>
+      
+      <!-- 2.加载解析注解的驱动 -->
+      <mvc:annotation-driven ></mvc:annotation-driven>
+      
+      <!-- 3. 视图渲染器-->
+       <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	       <property name="prefix" value="/WEB-INF/"></property>
+	       <property name="suffix" value=".jsp"></property>
+      </bean>
+      
+      <!--类型转换器  -->
+     <!-- <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+         <property name="converters">
+            <list>
+               <bean class="com.pro.convert.DateConvert"></bean>
+               <bean class="com.pro.convert.PointConvert"></bean>
+            </list>
+         
+         </property>
+      </bean>-->
+      
+      <!--文件上传  -->
+   <!--  <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	    &lt;!&ndash; 	设置默认编码格式  &ndash;&gt;
+		<property name="defaultEncoding" value="utf-8"></property>
+		&lt;!&ndash; 设置限定最大上传字节的 &ndash;&gt;
+		<property name="maxUploadSize" value="5000000"></property>
+	</bean>-->
+      
+    
+</beans>

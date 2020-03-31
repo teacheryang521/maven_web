@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pro.dao.WorkorderMapper" >
+  <resultMap id="workorderMap" type="workorder" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="projectId" property="projectid" jdbcType="INTEGER" />
+    <result column="executor" property="executor" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="orderLevel" property="orderlevel" jdbcType="INTEGER" />
+    <result column="createDate" property="createdate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  
+
+  <select id="getWorks" resultMap="workorderMap">
+    select * from workorder
+  </select>
+  
+  
+  
+</mapper>
